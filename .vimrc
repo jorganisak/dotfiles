@@ -1,6 +1,14 @@
 " Use the Solarized Dark theme
 set background=dark
 colorscheme solarized
+execute pathogen#infect()
+noremap ; :
+
+map <C-n> :NERDTreeToggle<CR>
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 
 " Make Vim more useful
 set nocompatible

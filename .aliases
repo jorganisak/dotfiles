@@ -1,3 +1,6 @@
+alias jump='ssh -A jorganisak@jump.nym1.adnxs.net'
+# Python 3 to py
+alias py="python3"
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."
