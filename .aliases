@@ -1,4 +1,7 @@
 alias jump='ssh -A jorganisak@jump.nym1.adnxs.net'
+alias jumphost='jorganisak@jumpnym1.adnxs.net'
+# Format json
+alias json="python -mjson.tool"
 # Python 3 to py
 alias py="python3"
 # Easier navigation: .., ..., ...., ....., ~ and -

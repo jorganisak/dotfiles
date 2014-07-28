@@ -1,15 +1,36 @@
 " Use the Solarized Dark theme
 set background=dark
 colorscheme solarized
+" file type indent "
+if has('autocmd')
+  filetype plugin indent on
+endif
+set autoindent
+set complete-=i
+set smarttab
+set nrformats-=octal
+set ttimeout
+set ttimeoutlen=100
+
+"Use <C-L> to clear the highlighting of :set hlsearch.
+if maparg('<C-L>', 'n') ==# ''
+	nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
+endif
+
+set display+=lastline
+
+set autoread
+
+" Init pathogen "
 execute pathogen#infect()
+" remap semicolon "
 noremap ; :
-
+" NERDTree shortcut "
 map <C-n> :NERDTreeToggle<CR>
+" CTRL P things "
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-
 " Make Vim more useful
 set nocompatible
 " Use the OS clipboard by default (on versions compiled with `+clipboard`)
@@ -56,7 +77,9 @@ set cursorline
 " Make tabs as wide as two spaces
 set tabstop=2
 " Show “invisible” characters
-set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
+if &listchars ==# 'eol:$'
+				  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+	endif
 set list
 " Highlight searches
 set hlsearch
