@@ -11,7 +11,6 @@ set smarttab
 set nrformats-=octal
 set ttimeout
 set ttimeoutlen=100
-
 "Use <C-L> to clear the highlighting of :set hlsearch.
 if maparg('<C-L>', 'n') ==# ''
 	nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
@@ -25,6 +24,8 @@ set autoread
 execute pathogen#infect()
 " remap semicolon "
 noremap ; :
+" Automatically close vim if only NERDTree is open "
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 " NERDTree shortcut "
 map <C-n> :NERDTreeToggle<CR>
 " CTRL P things "
