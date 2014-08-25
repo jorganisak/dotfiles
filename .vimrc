@@ -5,16 +5,23 @@ colorscheme solarized
 if has('autocmd')
   filetype plugin indent on
 endif
+
 set autoindent
 set complete-=i
 set smarttab
 set nrformats-=octal
 set ttimeout
 set ttimeoutlen=100
-"Use <C-L> to clear the highlighting of :set hlsearch.
-if maparg('<C-L>', 'n') ==# ''
-	nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
-endif
+
+" Make tabs as wide as two spaces
+set tabstop=2
+set shiftwidth=2
+set shiftround
+set expandtab
+
+set omnifunc=syntaxcomplete#Complete
+
+
 
 set display+=lastline
 
@@ -75,11 +82,9 @@ set number
 syntax on
 " Highlight current line
 set cursorline
-" Make tabs as wide as two spaces
-set tabstop=2
 " Show “invisible” characters
 if &listchars ==# 'eol:$'
-				  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+				set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 	endif
 set list
 " Highlight searches
@@ -129,7 +134,52 @@ noremap <leader>W :w !sudo tee % > /dev/null<CR>
 " Automatic commands
 if has("autocmd")
 	" Enable file type detection
-	filetype on
+  filetype on
+  filetype plugin indent on
 	" Treat .json files as .js
 	autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
+
 endif
+
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
+"
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+"Switch between the last two files
+nnoremap <leader><leader> <c-^>
+
+" Mini Buf Explor "
+
+map <Leader>e :MBEOpen<cr>
+map <Leader>c :MBEClose<cr>
+map <Leader>t :MBEToggle<cr>
+ 
+map <Leader>f   :MBEbn<CR>
+map <Leader>a   :MBEbp<CR>
+
+let g:miniBufExplBRSplit = 0
+
+
+autocmd FileType python nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
+
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+nmap s <Plug>(easymotion-s2)
+
+" Turn on case sensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+
+
+let g:go_disable_autoinstall = 1
