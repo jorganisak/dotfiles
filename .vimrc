@@ -46,7 +46,6 @@ set foldlevel=1         "this is just what i use
 
 " Init pathogen "
 execute pathogen#infect()
-call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 " remap semicolon "
 noremap ; :
