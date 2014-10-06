@@ -1,6 +1,8 @@
 # Add `~/bin` to the `$PATH`
-export PATH="$HOME/bin:$PATH";
-
+export PATH="$HOME/.nvm/v0.10.29/bin:$HOME/bin:$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin";
+export GOPATH="$HOME/projects/go/"
+source ~/.nvm/nvm.sh
+eval nvm use 0.10
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.

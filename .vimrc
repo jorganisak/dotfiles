@@ -6,6 +6,17 @@ if has('autocmd')
   filetype plugin indent on
 endif
 
+let g:bufferline_echo = 1
+let g:airline_theme='solarized'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#bufferline#enabled = 0
+"let g:tmuxline_preset = 'crosshair'
+"let g:tmuxline_preset = 'full'
+let g:tmuxline_preset = 'nightly_fox'
+"let g:tmuxline_preset = 'tmux'
+"let g:tmuxline_preset = 'powerline'
+
 set autoindent
 set complete-=i
 set smarttab
@@ -21,11 +32,17 @@ set expandtab
 
 set omnifunc=syntaxcomplete#Complete
 
-
+autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
 
 set display+=lastline
 
 set autoread
+
+"folding settings
+set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
+set foldlevel=1         "this is just what i use
 
 " Init pathogen "
 execute pathogen#infect()
@@ -154,18 +171,6 @@ nnoremap <C-l> <C-w>l
 "Switch between the last two files
 nnoremap <leader><leader> <c-^>
 
-" Mini Buf Explor "
-
-map <Leader>e :MBEOpen<cr>
-map <Leader>c :MBEClose<cr>
-map <Leader>t :MBEToggle<cr>
- 
-map <Leader>f   :MBEbn<CR>
-map <Leader>a   :MBEbp<CR>
-
-let g:miniBufExplBRSplit = 0
-
-
 autocmd FileType python nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
 
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
@@ -181,5 +186,7 @@ let g:EasyMotion_smartcase = 1
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
+map <Leader>a :bp<CR>
+map <Leader>f :bn<CR>
 
 let g:go_disable_autoinstall = 1
