@@ -32,6 +32,7 @@ set expandtab
 
 set omnifunc=syntaxcomplete#Complete
 
+let NERDTreeIgnore = ['\.pyc$']
 autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
 
 set display+=lastline
@@ -130,10 +131,10 @@ set title
 " Show the (partial) command as it’s being typed
 set showcmd
 " Use relative line numbers
-if exists("&relativenumber")
-	set relativenumber
-	au BufReadPost * set relativenumber
-endif
+"if exists("&relativenumber")
+	"set relativenumber
+	"au BufReadPost * set relativenumber
+"endif
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
 

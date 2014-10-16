@@ -31,3 +31,6 @@
 [submodule ".vim/bundle/less"]
 	path = .vim/bundle/less
 	url = https://github.com/groenewege/vim-less.git
+[submodule ".vim/bundle/python"]
+	path = .vim/bundle/python
+	url = https://github.com/klen/python-mode.git
