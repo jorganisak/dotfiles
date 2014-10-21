@@ -34,3 +34,6 @@
 [submodule ".vim/bundle/python"]
 	path = .vim/bundle/python
 	url = https://github.com/klen/python-mode.git
+[submodule ".vim/bundle/tmuxline"]
+	path = .vim/bundle/tmuxline
+	url = https://github.com/edkolev/tmuxline.vim.git
