@@ -1,10 +1,6 @@
 " Use the Solarized Dark theme
-set background=dark
+set background=light
 colorscheme solarized
-" file type indent "
-if has('autocmd')
-  filetype plugin indent on
-endif
 
 let g:bufferline_echo = 1
 let g:airline_theme='solarized'
@@ -45,6 +41,7 @@ set foldnestmax=10      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what i use
 
+filetype off
 " Init pathogen "
 execute pathogen#infect()
 call pathogen#helptags()
@@ -155,6 +152,7 @@ if has("autocmd")
 	" Enable file type detection
   filetype on
   filetype plugin indent on
+	filetype plugin on
 	" Treat .json files as .js
 	autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
 
