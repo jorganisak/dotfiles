@@ -1,5 +1,5 @@
 " Use the Solarized Dark theme
-set background=light
+set background=dark
 colorscheme solarized
 
 let g:bufferline_echo = 1
