@@ -12,6 +12,10 @@ let g:airline#extensions#bufferline#enabled = 0
 let g:tmuxline_preset = 'nightly_fox'
 "let g:tmuxline_preset = 'tmux'
 "let g:tmuxline_preset = 'powerline'
+"
+"PYMODE STUFF
+let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe', 'pylint','mccabe']
+
 
 set autoindent
 set complete-=i
