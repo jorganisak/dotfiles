@@ -2,6 +2,7 @@
 set background=dark
 colorscheme solarized
 
+
 let g:bufferline_echo = 1
 let g:airline_theme='solarized'
 let g:airline_powerline_fonts = 1

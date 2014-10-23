@@ -1,3 +1,6 @@
+[user]
+	name = "Joey Organisak"
+	email = "jorganisak@appnexus.com"
 [alias]
 
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
