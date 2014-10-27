@@ -16,6 +16,7 @@ let g:tmuxline_preset = 'nightly_fox'
 "
 "PYMODE STUFF
 let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe', 'pylint','mccabe']
+let g:pymode_rope = 0
 
 
 set autoindent
@@ -103,11 +104,6 @@ set number
 syntax on
 " Highlight current line
 set cursorline
-" Show “invisible” characters
-if &listchars ==# 'eol:$'
-				set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
-	endif
-set list
 " Highlight searches
 set hlsearch
 " Ignore case of searches
