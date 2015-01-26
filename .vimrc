@@ -1,6 +1,11 @@
 " Use the Solarized Dark theme
-set background=dark
+"set background=dark
+set background=light
 colorscheme solarized
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview 
+
+:nnoremap K i<CR><Esc>
 
 
 let g:bufferline_echo = 1
@@ -18,6 +23,16 @@ let g:tmuxline_preset = 'nightly_fox'
 let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe', 'pylint','mccabe']
 let g:pymode_rope = 0
 
+let g:jsx_ext_required = 0
+if $TMUX == ''
+	set clipboard+=unnamed
+endif
+
+autocmd User Node
+			\ if &filetype == "javascript" |
+			\   nmap <buffer> <C-w>f <Plug>NodeVSplitGotoFile |
+			\   nmap <buffer> <C-w><C-f> <Plug>NodeVSplitGotoFile |
+			\ endif
 
 set autoindent
 set complete-=i
@@ -63,8 +78,6 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 " Make Vim more useful
 set nocompatible
-" Use the OS clipboard by default (on versions compiled with `+clipboard`)
-set clipboard=unnamed
 " Enhance command-line completion
 set wildmenu
 " Allow cursor keys in insert mode
@@ -130,8 +143,8 @@ set title
 set showcmd
 " Use relative line numbers
 "if exists("&relativenumber")
-	"set relativenumber
-	"au BufReadPost * set relativenumber
+"set relativenumber
+"au BufReadPost * set relativenumber
 "endif
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
@@ -151,8 +164,8 @@ noremap <leader>W :w !sudo tee % > /dev/null<CR>
 " Automatic commands
 if has("autocmd")
 	" Enable file type detection
-  filetype on
-  filetype plugin indent on
+	filetype on
+	filetype plugin indent on
 	filetype plugin on
 	" Treat .json files as .js
 	autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript

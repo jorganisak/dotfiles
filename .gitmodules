@@ -40,3 +40,12 @@
 [submodule ".vim/bundle/fugitive"]
 	path = .vim/bundle/fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+[submodule ".vim/bundle/jsx"]
+	path = .vim/bundle/jsx
+	url = https://github.com/mxw/vim-jsx.git
+[submodule ".vim/bundle/htmltagsmatch"]
+	path = .vim/bundle/htmltagsmatch
+	url = https://github.com/Valloric/MatchTagAlways.git
+[submodule ".vim/bundle/vim-node"]
+	path = .vim/bundle/vim-node
+	url = https://github.com/moll/vim-node.git

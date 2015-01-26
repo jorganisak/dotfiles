@@ -2,11 +2,12 @@
 export PATH="$HOME/.nvm/v0.10.29/bin:$HOME/bin:$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin:$HOME/projects/go/bin";
 export GOPATH="$HOME/projects/go/"
 source ~/.nvm/nvm.sh
+ulimit -n 2560
 eval nvm use 0.10
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
-for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
+for file in ~/.{path,bash_prompt,exports,aliases,functions,extra.sh}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
