@@ -1,12 +1,11 @@
 " Use the Solarized Dark theme
-"set background=dark
-set background=light
+set background=dark
+"set background=light
 colorscheme solarized
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview 
 
 :nnoremap K i<CR><Esc>
-set colorcolumn=80
 let g:bufferline_echo = 1
 let g:airline_theme='solarized'
 let g:airline_powerline_fonts = 1
