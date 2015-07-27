@@ -4,6 +4,14 @@ set background=dark
 colorscheme solarized
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 :nnoremap K i<CR><Esc>
 let g:bufferline_echo = 1
@@ -73,7 +81,7 @@ map <C-n> :NERDTreeToggle<CR>
 " CTRL P things "
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_cmd = 'CtrlP ./'
 " Make Vim more useful
 set nocompatible
 " Enhance command-line completion

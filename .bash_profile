@@ -1,5 +1,5 @@
 # Add `~/bin` to the `$PATH`
-export PATH="$HOME/.nvm/v0.10.29/bin:$HOME/bin:$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin:$HOME/projects/go/bin";
+export PATH="$HOME/.nvm/v0.10.29/bin:$HOME/bin:$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin:/Applications/Postgres.app/Contents/Versions/9.3/bin:$HOME/projects/go/bin";
 export GOPATH="$HOME/projects/go/"
 source ~/.nvm/nvm.sh
 ulimit -n 2560
